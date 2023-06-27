@@ -1,0 +1,44 @@
+### GOOGLE
+POST http://localhost:8080/send
+Content-Type: application/json
+
+{
+  "message": "알림을 확인해주세요.",
+  "notificationProvider": "GOOGLE"
+}
+
+### AOS
+POST http://localhost:8080/send
+Content-Type: application/json
+
+{
+"message": "알림을 확인해주세요.",
+"notificationProvider": "AOS"
+}
+
+### IOS
+POST http://localhost:8080/send
+Content-Type: application/json
+
+{
+"message": "알림을 확인해주세요.",
+"notificationProvider": "IOS"
+}
+
+### AWS
+POST http://localhost:8080/send
+Content-Type: application/json
+
+{
+  "message": "알림을 확인해주세요.",
+  "notificationProvider": "AWS"
+}
+
+### ERROR
+POST http://localhost:8080/send
+Content-Type: application/json
+
+{
+  "message": "알림을 확인해주세요.",
+  "notificationProvider": "KAKAO"
+}
