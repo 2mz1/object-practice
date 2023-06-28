@@ -4,22 +4,20 @@ import com.object.practice.api.notification.dto.NotificationSendRequestDTO;
 import com.object.practice.api.notification.service.NotificationService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
-
 @RestController
+@RequestMapping("/api/notify")
 public class NotificationController {
+    private final NotificationService notificationService;
 
-    private final Map<String, NotificationService> notificationServices;
-
-    public NotificationController(Map<String, NotificationService> notificationServices) {
-        this.notificationServices = notificationServices;
+    public NotificationController(final NotificationService notificationService) {
+        this.notificationService = notificationService;
     }
 
-    @PostMapping("/send")
+    @PostMapping
     public String sendNotification(@RequestBody NotificationSendRequestDTO notificationSendRequestDTO) {
-        return notificationServices.get(notificationSendRequestDTO.getProviderName()).sendNotification(notificationSendRequestDTO.message());
+        return notificationService.notify(notificationSendRequestDTO);
     }
-
 }
