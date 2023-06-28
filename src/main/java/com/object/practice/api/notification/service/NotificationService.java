@@ -1,7 +1,11 @@
 package com.object.practice.api.notification.service;
 
+import com.object.practice.api.notification.dto.NotificationSendRequestDTO;
+
+/**
+ * Notification Service Interface.
+ */
 public interface NotificationService {
 
-    String sendNotification(String message);
-
+    String notify(NotificationSendRequestDTO notificationSendRequestDTO);
 }

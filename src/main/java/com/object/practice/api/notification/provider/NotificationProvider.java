@@ -4,6 +4,9 @@ import com.object.practice.api.notification.constant.NotificationBeanNameConstan
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * Notification Provider.
+ */
 @Getter
 @RequiredArgsConstructor
 public enum NotificationProvider {
@@ -11,10 +14,15 @@ public enum NotificationProvider {
     IOS(NotificationBeanNameConstant.IOS_NOTIFICATION_SERVICE),
     AWS(NotificationBeanNameConstant.AWS_NOTIFICATION_SERVICE),
     GOOGLE(NotificationBeanNameConstant.GOOGLE_NOTIFICATION_SERVICE),
-
     ;
-
 
     private final String notificationName;
 
+    static public String getIfValid(String notificationName) {
+        try {
+            return NotificationProvider.valueOf(notificationName).name();
+        } catch (Exception e) {
+            throw new IllegalArgumentException("잘못된 NotificationProvider 입니다.");
+        }
+    }
 }

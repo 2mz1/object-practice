@@ -1,0 +1,31 @@
+@startuml
+
+package Controller <<Folder>> {
+  class NotificationController
+}
+
+package Service <<Folder>> {
+  interface NotificationService {
+    + sendNotification(String message)
+  }
+  class AosNotificationService {
+    + sendNotification(String message)
+  }
+  class AwsNotificationService {
+    + sendNotification(String message)
+  }
+  class GoogleNotificationService {
+    + sendNotification(String message)
+  }
+  class IosNotificationService {
+    + sendNotification(String message)
+  }
+}
+
+NotificationController -> NotificationService : sendNotification()
+AosNotificationService -d-* NotificationService
+AwsNotificationService -d-* NotificationService
+GoogleNotificationService -d-* NotificationService
+IosNotificationService -d-* NotificationService
+
+@enduml
