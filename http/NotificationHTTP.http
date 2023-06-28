@@ -1,5 +1,5 @@
 ### GOOGLE
-POST http://localhost:8080/send
+POST http://localhost:8080/api/notify
 Content-Type: application/json
 
 {
@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ### AOS
-POST http://localhost:8080/send
+POST http://localhost:8080/api/notify
 Content-Type: application/json
 
 {
@@ -17,7 +17,7 @@ Content-Type: application/json
 }
 
 ### IOS
-POST http://localhost:8080/send
+POST http://localhost:8080/api/notify
 Content-Type: application/json
 
 {
@@ -26,7 +26,7 @@ Content-Type: application/json
 }
 
 ### AWS
-POST http://localhost:8080/send
+POST http://localhost:8080/api/notify
 Content-Type: application/json
 
 {
@@ -35,7 +35,7 @@ Content-Type: application/json
 }
 
 ### ERROR
-POST http://localhost:8080/send
+POST http://localhost:8080/api/notify
 Content-Type: application/json
 
 {

@@ -13,5 +13,4 @@ public record NotificationSendRequestDTO(
     public String getProviderName() {
         return notificationProvider.getNotificationName();
     }
-
 }

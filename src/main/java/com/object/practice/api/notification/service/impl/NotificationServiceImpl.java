@@ -2,16 +2,15 @@ package com.object.practice.api.notification.service.impl;
 
 import com.object.practice.api.notification.dto.NotificationSendRequestDTO;
 import com.object.practice.api.notification.model.Notification;
-import com.object.practice.api.notification.provider.NotificationProvider;
 import com.object.practice.api.notification.service.NotificationService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
 /**
  * Notification Service.
  */
+@Service
 public class NotificationServiceImpl implements NotificationService {
 
     private final Map<String, Notification> notificationServices;
@@ -23,8 +22,7 @@ public class NotificationServiceImpl implements NotificationService {
     @Override
     public String notify(final NotificationSendRequestDTO notificationSendRequestDTO) {
         return notificationServices
-                .get(NotificationProvider
-                        .getIfValid(notificationSendRequestDTO.getProviderName()))
+                .get(notificationSendRequestDTO.getProviderName())
                 .send(notificationSendRequestDTO.message());
     }
 }

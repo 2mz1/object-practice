@@ -17,12 +17,4 @@ public enum NotificationProvider {
     ;
 
     private final String notificationName;
-
-    static public String getIfValid(String notificationName) {
-        try {
-            return NotificationProvider.valueOf(notificationName).name();
-        } catch (Exception e) {
-            throw new IllegalArgumentException("잘못된 NotificationProvider 입니다.");
-        }
-    }
 }
